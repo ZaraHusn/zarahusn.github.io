@@ -20,11 +20,4 @@ const posts = [
     read: "7 min read",
     tags: ["trading", "math", "finance"]
   }
-  {
-  slug: "trial",
-    title: "Mathematics of Trading: Modeling Randomness",
-    date: "2025-11-10",
-    read: "7 min read",
-    tags: ["trading", "math", "finance"]
-  }
 ];
