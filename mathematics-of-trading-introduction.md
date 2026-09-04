@@ -1,6 +1,6 @@
 Welcome to *Mathematics of Trading* — a short series where I work through the ideas behind quantitative trading from the ground up, roughly at the level I wish someone had explained them to me.
 
-## Why maths?
+## Why maths? update
 
 Markets look chaotic, but a lot of the machinery for reasoning about them is surprisingly simple. The core question is always the same: given what we know now, what can we say about what happens next?
 
