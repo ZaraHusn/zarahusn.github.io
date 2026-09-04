@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zara Hussain</title>
+  <meta name="description" content="Notes, projects, and thoughts on markets, math, and uncertainty." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="name" href="index.html">zh.</a>
+
+      <nav class="links">
+        <a href="index.html" aria-current="page">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p>
+        Exploring probability, statistics, machine learning, and the behaviour of financial markets.
+      </p>
+
+      <p>
+        A learning journal that documents models, intuition, and practical analysis.
+      </p>
+    </section>
+
+    <section class="posts">
+      <h2>Posts</h2>
+
+      <input
+        type="search"
+        id="search"
+        placeholder="Search posts..."
+        autocomplete="off"
+      />
+
+      <div id="filters"></div>
+
+      <div id="posts"></div>
+
+      <p id="empty" hidden>No posts found.</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="social">
+        <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <span>©  <span id="year"></span>  - Zara Hussain</span>
+    </div>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

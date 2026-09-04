@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Zara Hussain</title>
+  <meta name="description" content="About Zara Hussain — quant, markets, and maths." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="name" href="index.html">zh.</a>
+      <nav class="links">
+        <a href="index.html">Blog</a>
+        <a href="about.html" aria-current="page">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <div class="about-head">
+        <div class="avatar" aria-hidden="true">ZH</div>
+        <div>
+          <h1>About me</h1>
+          <div class="role">Zara Hussain · quant, markets &amp; maths</div>
+        </div>
+      </div>
+
+      <p>
+        Hi, I'm Zara. I spend my time exploring probability, statistics, machine
+        learning, and the behaviour of financial markets — and this blog is where
+        I write it all down as I learn.
+      </p>
+
+      <p>
+        <em>[Add a sentence or two here about your background — what you studied,
+        what you work on, and what drew you to quant. This is the part people read
+        to get a sense of who you are, so make it yours.]</em>
+      </p>
+
+      <p>
+        My aim with these posts is simple: explain each idea clearly enough that
+        I'm sure I actually understand it, and keep a running record I can look
+        back on. If something here is wrong or could be clearer, I'd genuinely
+        like to hear about it.
+      </p>
+
+      <h2>What I'm into</h2>
+      <ul>
+        <li>Probability and stochastic models</li>
+        <li>Volatility, risk, and market microstructure</li>
+        <li>Machine learning applied to messy, real-world data</li>
+        <li>Turning a fuzzy idea into something testable with a bit of code</li>
+      </ul>
+
+      <h2>Elsewhere</h2>
+      <p class="links-row">
+        <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>©  <span id="year"></span>  - Zara Hussain</span>
+    </div>
+  </footer>
+
+  <script>
+    var y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

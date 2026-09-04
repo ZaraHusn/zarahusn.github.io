@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" width="560" height="240" role="img" aria-label="A normal distribution with the region within one standard deviation of the mean shaded">
+  <rect width="560" height="240" fill="#151821"/>
+  <line x1="40" y1="200" x2="520" y2="200" stroke="rgba(255,255,255,0.14)"/>
+  <path d="M210 200 C240 150 262 78 280 62 C298 78 320 150 350 200 Z" fill="#f08c3a" opacity="0.22"/>
+  <path d="M40 200 C150 200 200 120 280 62 C360 120 410 200 520 200" fill="none" stroke="#f08c3a" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="280" y1="62" x2="280" y2="200" stroke="rgba(255,255,255,0.28)" stroke-dasharray="3 4"/>
+  <line x1="210" y1="200" x2="210" y2="206" stroke="#a3adc2"/>
+  <line x1="350" y1="200" x2="350" y2="206" stroke="#a3adc2"/>
+  <text x="276" y="224" fill="#a3adc2" font-family="system-ui, sans-serif" font-size="13">&#956;</text>
+  <text x="192" y="224" fill="#a3adc2" font-family="system-ui, sans-serif" font-size="13">&#956;&#8722;&#963;</text>
+  <text x="332" y="224" fill="#a3adc2" font-family="system-ui, sans-serif" font-size="13">&#956;+&#963;</text>
+</svg>

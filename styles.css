@@ -1,0 +1,354 @@
+:root {
+  --bg: #0f1115;
+  --panel: #151821;
+  --text: #e6e9ef;
+  --muted: #a3adc2;
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #f08c3a;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.topbar {
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.links a {
+  margin-left: 1rem;
+  color: var(--muted);
+}
+
+.intro {
+  margin: 3rem 0;
+}
+
+.intro p {
+  font-size: 1.05rem;
+}
+
+.posts h2 {
+  margin-bottom: 1rem;
+}
+
+input[type="search"] {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+}
+
+#filters {
+  margin-bottom: 1.5rem;
+}
+
+.filter {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.filter.active {
+  background: var(--accent);
+  color: #000;
+}
+
+.post {
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.post h3 {
+  margin: 0 0 0.3rem 0;
+  font-size: 1.1rem;
+}
+
+.meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.footer {
+  margin: 4rem 0 2rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------------------------------------------------------------------------
+   Added: post pages + About page. Everything above is your original CSS.
+   --------------------------------------------------------------------------- */
+
+/* make a post title in the list feel clickable */
+.post h3 a {
+  color: var(--text);
+}
+.post h3 a:hover {
+  color: var(--accent);
+}
+
+/* ---- single post page ---- */
+.article {
+  padding: 1.5rem 0 2rem;
+}
+
+.back {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.article h1 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin: 1rem 0 0.3rem;
+}
+
+.article > .meta {
+  margin-bottom: 1.8rem;
+}
+
+/* the rendered Markdown body */
+.prose {
+  font-size: 1.02rem;
+}
+
+.prose h2 {
+  font-size: 1.3rem;
+  margin: 2rem 0 0.8rem;
+}
+
+.prose h3 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.6rem;
+}
+
+.prose p,
+.prose li {
+  color: var(--text);
+}
+
+.prose a {
+  color: var(--accent);
+}
+.prose a:hover {
+  text-decoration: underline;
+}
+
+.prose img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.4rem 0 0.4rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* an image immediately followed by italic text reads as a caption */
+.prose img + em,
+.prose figcaption {
+  display: block;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+.prose blockquote {
+  margin: 1.3rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.3rem;
+}
+.prose li {
+  margin: 0.35rem 0;
+}
+
+/* code: inline + blocks (highlight.js theme handles block colours) */
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9em;
+}
+.prose :not(pre) > code {
+  background: var(--panel);
+  padding: 0.12em 0.4em;
+  border-radius: 6px;
+}
+.prose pre {
+  margin: 1.3rem 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.prose pre code {
+  padding: 0;
+  background: none;
+}
+
+/* a download / attachment link */
+.prose a[href$=".py"],
+.prose a[href$=".ipynb"],
+.prose a[href$=".csv"],
+.prose a[href$=".pdf"],
+.prose a[href$=".zip"] {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  margin: 0.3rem 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+}
+.prose a[href$=".py"]:hover,
+.prose a[href$=".ipynb"]:hover,
+.prose a[href$=".csv"]:hover,
+.prose a[href$=".pdf"]:hover,
+.prose a[href$=".zip"]:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.3rem 0;
+  font-size: 0.95rem;
+}
+.prose th,
+.prose td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* let long equations scroll instead of overflowing */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0;
+}
+
+/* ---- About page ---- */
+.about {
+  padding: 1.5rem 0 2rem;
+}
+
+.about-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.about h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.about .role {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.about p {
+  font-size: 1.02rem;
+}
+
+.about h2 {
+  font-size: 1.2rem;
+  margin: 2rem 0 0.6rem;
+}
+
+.about ul {
+  padding-left: 1.3rem;
+}
+.about li {
+  margin: 0.35rem 0;
+}
+
+.links-row a {
+  color: var(--accent);
+  margin-right: 1.1rem;
+}
+
+/* current tab in the top nav */
+.links a[aria-current="page"] {
+  color: var(--text);
+}
+
+/* centered social links in the footer of the main blog page */
+.social {
+  margin-bottom: 0.7rem;
+}
+.social a {
+  margin: 0 0.55rem;
+  color: var(--muted);
+}
+.social a:hover {
+  color: var(--accent);
+}

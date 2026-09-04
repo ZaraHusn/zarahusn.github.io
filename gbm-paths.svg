@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 240" width="560" height="240" role="img" aria-label="Three simulated price paths over one year">
+  <rect width="560" height="240" fill="#151821"/>
+  <line x1="24" y1="210" x2="536" y2="210" stroke="rgba(255,255,255,0.14)"/>
+  <line x1="24" y1="30" x2="24" y2="210" stroke="rgba(255,255,255,0.14)"/>
+  <path d="M24 170 L75 160 L126 168 L177 150 L228 155 L279 138 L330 145 L381 120 L432 128 L483 105 L536 92" fill="none" stroke="#f08c3a" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+  <path d="M24 170 L75 176 L126 166 L177 180 L228 172 L279 186 L330 178 L381 190 L432 196 L483 188 L536 200" fill="none" stroke="#5dcaa5" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+  <path d="M24 170 L75 164 L126 172 L177 158 L228 166 L279 150 L330 160 L381 146 L432 150 L483 140 L536 132" fill="none" stroke="#85b7eb" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round" opacity="0.85"/>
+  <circle cx="24" cy="170" r="3" fill="#e6e9ef"/>
+  <text x="30" y="26" fill="#a3adc2" font-family="system-ui, sans-serif" font-size="12">price</text>
+  <text x="500" y="228" fill="#a3adc2" font-family="system-ui, sans-serif" font-size="12">time</text>
+</svg>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Post — zh.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="name" href="index.html">zh.</a>
+      <nav class="links">
+        <a href="index.html">Blog</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="article">
+      <a class="back" href="index.html">← Posts</a>
+      <h1 id="post-title">Loading…</h1>
+      <div class="meta" id="post-meta"></div>
+      <div class="prose" id="post-body"></div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <span>©  <span id="year"></span>  - Zara Hussain</span>
+    </div>
+  </footer>
+
+  <script src="posts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <script>
+    (function () {
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+
+      var slug = new URLSearchParams(location.search).get("p");
+      var titleEl = document.getElementById("post-title");
+      var metaEl = document.getElementById("post-meta");
+      var bodyEl = document.getElementById("post-body");
+
+      var meta = (typeof posts !== "undefined")
+        ? posts.find(function (p) { return p.slug === slug; })
+        : null;
+
+      if (!slug || !meta) {
+        titleEl.textContent = "Post not found";
+        bodyEl.innerHTML = '<p class="meta">That post doesn\u2019t exist. <a href="index.html">Back to posts</a>.</p>';
+        return;
+      }
+
+      document.title = meta.title + " — zh.";
+      titleEl.textContent = meta.title;
+      metaEl.textContent = meta.date + " · " + meta.read;
+
+      if (window.marked && marked.setOptions) marked.setOptions({ gfm: true, breaks: false });
+
+      fetch(slug + ".md")
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (md) {
+          bodyEl.innerHTML = marked.parse(md);
+          bodyEl.querySelectorAll("pre code").forEach(function (el) {
+            try { hljs.highlightElement(el); } catch (e) {}
+          });
+          try {
+            renderMathInElement(bodyEl, {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false }
+              ],
+              throwOnError: false
+            });
+          } catch (e) {}
+        })
+        .catch(function () {
+          bodyEl.innerHTML = '<p class="meta">Couldn\u2019t load this post. If you opened the file directly from disk, run a local server (for example the Live Preview extension in VS Code) \u2014 browsers block reading local files, so the Markdown can\u2019t be fetched. On GitHub Pages this works automatically.</p>';
+        });
+    })();
+  </script>
+</body>
+</html>
