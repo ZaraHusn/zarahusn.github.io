@@ -352,3 +352,13 @@ input[type="search"] {
 .social a:hover {
   color: var(--accent);
 }
+.section-label {
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.8rem 0 0.2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--border);
+}
+.section-label:first-child { margin-top: 0; }
