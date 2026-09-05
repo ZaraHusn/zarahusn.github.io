@@ -25,22 +25,32 @@ function render() {
   postsEl.innerHTML = "";
   const query = searchEl.value.toLowerCase();
 
-  const filtered = posts.filter(p => {
-    const matchTag = activeTag === "all" || p.tags.includes(activeTag);
-    const matchSearch = p.title.toLowerCase().includes(query);
-    return matchTag && matchSearch;
-  });
-
+  const filtered = posts.filter(p => p.title.toLowerCase().includes(query));
   emptyEl.hidden = filtered.length > 0;
 
+  const order = [];
+  const groups = {};
   filtered.forEach(p => {
-    const div = document.createElement("div");
-    div.className = "post";
-    div.innerHTML = `
-      <h3><a href="post.html?p=${p.slug}">${p.title}</a></h3>
-      <div class="meta">${p.date} · ${p.read}</div>
-    `;
-    postsEl.appendChild(div);
+    const sec = p.section || "Other";
+    if (!groups[sec]) { groups[sec] = []; order.push(sec); }
+    groups[sec].push(p);
+  });
+
+  order.forEach(sec => {
+    const label = document.createElement("div");
+    label.className = "section-label";
+    label.textContent = sec;
+    postsEl.appendChild(label);
+
+    groups[sec].forEach(p => {
+      const div = document.createElement("div");
+      div.className = "post";
+      div.innerHTML = `
+        <h3><a href="post.html?p=${p.slug}">${p.title}</a></h3>
+        <div class="meta">${p.date} · ${p.read}</div>
+      `;
+      postsEl.appendChild(div);
+    });
   });
 }
 
